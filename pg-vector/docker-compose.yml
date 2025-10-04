@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  pgvector:
+    image: paradedb/paradedb:latest
+    container_name: pgvector_db
+    environment:
+      POSTGRES_DB: vector_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgvector_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    restart: unless-stopped
+
+volumes:
+  pgvector_data:
