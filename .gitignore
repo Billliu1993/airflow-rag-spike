@@ -206,3 +206,17 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 .DS_Store
+
+# Airflow
+airflow.cfg
+airflow.db
+airflow.db-shm
+airflow.db-wal
+logs/
+simple_auth_manager_passwords.json.generated
+webserver_config.py
+airflow-webserver.pid
+scheduler.pid
+
+# Project-specific
+include/raw_documents/*
